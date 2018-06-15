@@ -56,8 +56,12 @@ def print_top(filename):
     dict_wc = dict_count(filename)
     l = dict_wc.items()
     sortedList = sorted(l, key=keyElem, reverse=True)
-    for k, v in sortedList:
-        print(k, v)
+    count = 0
+    for k, v in sortedList:        
+        count += 1
+        print(count, k, '=', v)
+        if count >= 20:
+            break
 
 
 def keyElem(elem):
