@@ -54,9 +54,14 @@ def print_words(filename):
 
 def print_top(filename):
     dict_wc = dict_count(filename)
-    for w in sorted(dict_wc, key=dict_wc.__getitem__,reverse=True):
-        print(w, dict_wc[w])
+    l = dict_wc.items()
+    sortedList = sorted(l, key=keyElem, reverse=True)
+    for k, v in sortedList:
+        print(k, v)
 
+
+def keyElem(elem):
+    return elem[1]
 
 def dict_count(filename):
     f = open(filename)
